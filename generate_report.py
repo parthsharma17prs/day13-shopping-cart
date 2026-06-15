@@ -127,19 +127,63 @@ def create_report():
     p.add_run("Features:\n").bold = True
     p.add_run("- Cart Page: Dynamic unit price and subtotal calculation, quantity selectors, checkout redirection, and free shipping calculations.\n- Checkout Page: Complete shipping address form, mock Credit/Debit Card payment forms, responsive order summaries, and success completion cards.\n")
     
-    # Insert screenshot
-    img_path = "/Users/macbook/.gemini/antigravity-ide/brain/42d8c101-f008-42a7-ab63-e9b9808302d2/day13_shopping_cart_checkout_1781525841608.png"
-    if os.path.exists(img_path):
-        p_img = doc.add_paragraph()
-        p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        r_img = p_img.add_run()
-        r_img.add_picture(img_path, width=Inches(5.5))
-        p_caption = doc.add_paragraph()
-        p_caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        rc = p_caption.add_run("Figure 13.1: Premium Responsive Cart and Checkout Interface Mockup")
-        rc.font.italic = True
-        rc.font.size = Pt(10)
+    # Insert screenshot 1 (Cart & Checkout UI)
+    img_path1 = "day13_shopping_cart_checkout.png"
+    if os.path.exists(img_path1):
+        p_img1 = doc.add_paragraph()
+        p_img1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r_img1 = p_img1.add_run()
+        r_img1.add_picture(img_path1, width=Inches(5.5))
+        p_caption1 = doc.add_paragraph()
+        p_caption1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        rc1 = p_caption1.add_run("Figure 13.1: Premium Responsive Cart and Checkout Interface Mockup")
+        rc1.font.italic = True
+        rc1.font.size = Pt(10)
         
+    doc.add_page_break()
+
+    # Insert screenshot 2 (VS Code Project Structure & Server Code)
+    h_struct = doc.add_paragraph()
+    r_struct_t = h_struct.add_run("PROJECT DIRECTORY & CODE STRUCTURE")
+    r_struct_t.font.name = 'Arial'
+    r_struct_t.font.size = Pt(16)
+    r_struct_t.font.bold = True
+    r_struct_t.font.color.rgb = RGBColor(107, 70, 193)
+
+    img_path2 = "day13_file_structure_code.png"
+    if os.path.exists(img_path2):
+        p_img2 = doc.add_paragraph()
+        p_img2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r_img2 = p_img2.add_run()
+        r_img2.add_picture(img_path2, width=Inches(5.5))
+        p_caption2 = doc.add_paragraph()
+        p_caption2.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        rc2 = p_caption2.add_run("Figure 13.2: VS Code Workspace - Code Structure & Backend Controller Server")
+        rc2.font.italic = True
+        rc2.font.size = Pt(10)
+
+    doc.add_page_break()
+
+    # Insert screenshot 3 (MongoDB Compass Database State)
+    h_db = doc.add_paragraph()
+    r_db_t = h_db.add_run("MONGODB DATABASE PERSISTENCE")
+    r_db_t.font.name = 'Arial'
+    r_db_t.font.size = Pt(16)
+    r_db_t.font.bold = True
+    r_db_t.font.color.rgb = RGBColor(107, 70, 193)
+
+    img_path3 = "day13_mongodb_compass_cart.png"
+    if os.path.exists(img_path3):
+        p_img3 = doc.add_paragraph()
+        p_img3.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r_img3 = p_img3.add_run()
+        r_img3.add_picture(img_path3, width=Inches(5.5))
+        p_caption3 = doc.add_paragraph()
+        p_caption3.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        rc3 = p_caption3.add_run("Figure 13.3: MongoDB Compass - Document entries inside the Carts Collection")
+        rc3.font.italic = True
+        rc3.font.size = Pt(10)
+
     doc.add_page_break()
     
     # Final Conclusion
